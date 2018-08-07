@@ -1,0 +1,18 @@
+<h2>My tasks</h2>
+
+<% @tasks.each do |task| %>
+<li class="list">
+  <%= task.completed ? "☑️" : "⏹" %>
+  <%= link_to task.name, task_path(task) %>
+  <%= button_to "delete", delete_path(task), method: :delete, data: { confirm: "Are you sure?" }%>
+</li>
+<% end %>
+
+<%= link_to "Add a new task", new_task_path %>
+<%= link_to "Go Back", tasks_path %>
+
+
+
+
+
+
